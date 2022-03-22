@@ -8,6 +8,7 @@ const (
 	MsgHasStockNotice = 5
 	MsgStopWork = 6
 
+	AdminClientName = "admin"
 )
 
 // 消息
