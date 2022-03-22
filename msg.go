@@ -13,7 +13,7 @@ const (
 // 消息
 type Message struct {
 	MessageID 	  int `json:"message_id"`
-	Online 		  Online
+	ClientName    string `json:"client_name"`
 	Users         []User `json:"users"`
 	SecKill       SecKillConf   `json:"sec_kill"`
 	Monitor       MonitorConf   `json:"monitor"`
@@ -37,11 +37,7 @@ type MonitorConf struct {
 	CartInterval int      `json:"cart_interval"` // 重新加车时间
 }
 
-type Online struct {
-	Name string
-}
-
 type User struct {
-	NickName string
-	Cookie string
+	NickName string `json:"nick_name"`
+	Cookie string `json:"cookie"`
 }
