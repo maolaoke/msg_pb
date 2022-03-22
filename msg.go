@@ -1,38 +1,39 @@
 package msg_pb
 
 const (
-	ActionIdSecKill        = 1
-	ActionIdMonitor        = 2
-	ActionIdHasStockNotice = 3
-
 	MsgOnline = 1
-	MsgSendAll = 3
+	MsgOffline = 2
+	MsgTaskSecKill = 3
+	MsgTasKMonitor = 4
+	MsgHasStockNotice = 5
+	MsgStopWork = 6
+
 )
 
 // 消息
 type Message struct {
-	ActionID int `json:"action_id"`
-	Users []*User `json:"users"`
-	SecKill *SecKillConf `json:"sec_kill"`
-	Monitor *MonitorConf `json:"monitor"`
-	HasStockSkuID string `json:"has_stock_sku_id"`
+	MessageID 	  int `json:"message_id"`
+	Users         []User `json:"users"`
+	SecKill       SecKillConf   `json:"sec_kill"`
+	Monitor       MonitorConf   `json:"monitor"`
+	HasStockSkuID string         `json:"has_stock_sku_id"`
 }
 
 type SecKillConf struct {
-	SkuIds []string
-	BuyTime int64 // 毫秒时间戳
-	StartTime int
-	EndTime int
-	Mode uint32
-	RefreshTime int
-	CommitCount int
+	SkuIds      []string `json:"sku_ids"`
+	BuyTime     int64    `json:"buy_time"` // 毫秒时间戳
+	StartTime   int      `json:"start_time"`
+	EndTime     int      `json:"end_time"`
+	Mode        uint32   `json:"mode"`
+	RefreshTime int      `json:"refresh_time"`
+	CommitCount int      `json:"commit_count"`
 }
 
 type MonitorConf struct {
-	SkuIds []string
-	SingleTime int
-	IntervalTime int
-	CartInterval int
+	SkuIds       []string `json:"sku_ids"`
+	SingleTime   int      `json:"single_time"` // 单账号监控时间
+	IntervalTime int      `json:"interval_time"` // 提交间隔时间
+	CartInterval int      `json:"cart_interval"` // 重新加车时间
 }
 
 type User struct {
