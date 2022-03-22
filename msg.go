@@ -13,6 +13,7 @@ const (
 // 消息
 type Message struct {
 	MessageID 	  int `json:"message_id"`
+	Online 		  Online
 	Users         []User `json:"users"`
 	SecKill       SecKillConf   `json:"sec_kill"`
 	Monitor       MonitorConf   `json:"monitor"`
@@ -34,6 +35,10 @@ type MonitorConf struct {
 	SingleTime   int      `json:"single_time"` // 单账号监控时间
 	IntervalTime int      `json:"interval_time"` // 提交间隔时间
 	CartInterval int      `json:"cart_interval"` // 重新加车时间
+}
+
+type Online struct {
+	Name string
 }
 
 type User struct {
