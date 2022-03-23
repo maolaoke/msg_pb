@@ -51,6 +51,7 @@ type User struct {
 
 type SuccessOrderInfo struct {
 	UserName string `json:"user_name"`
+	SkuID string	`json:"sku_id"`
 	SubmitTime time.Time `json:"submit_time"`
 	DiffTime int `json:"diff_time"`
 	OrderID string `json:"order_id"`
