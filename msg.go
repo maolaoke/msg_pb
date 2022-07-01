@@ -17,6 +17,11 @@ const (
 	MsgHeart = 100
 
 	AdminClientName = "admin"
+
+	// 下单接口类型
+	JdAppApi = 1
+	JxAppApi = 2
+	JdMApi   = 3
 )
 
 // 消息
@@ -42,7 +47,12 @@ type SecKillConf struct {
 	Mode        uint32      `json:"mode"`
 	RefreshTime int         `json:"refresh_time"`
 	CommitCount int         `json:"commit_count"`
+	BeforeTime  int         `json:"before_time"`
 	AddressInfo AddressInfo `json:"address_info"`
+	ApiType     int         `json:"api_type"`   // 接口类型
+	IsYuShou    int         `json:"is_yu_shou"` // 是否是定金模式。预售
+	IsMck       int         `json:"is_mck"`     // 是否MCK 0否 1是
+	PayType     int         `json:"pay_type"`   // 支付类型 4：普通 5：对公转账
 }
 
 type MonitorConf struct {
