@@ -60,6 +60,8 @@ type SecKillConf struct {
 type MonitorConf struct {
 	SkuIds         []string    `json:"sku_ids"`
 	IntervalTime   int         `json:"interval_time"` // 提交间隔时间
+	SubmitType     int         `json:"submit_type"`   // 1 app 2 qq 3 京喜
+	Threshold      int         `json:"threshold"`     // 收藏夹返回多少个以上有货则判断为误判
 	AddressInfo    AddressInfo `json:"address_info"`
 	MonitorUsers   []User      `json:"monitor_users"`
 	SubmitUsers    []User      `json:"submit_users"`
