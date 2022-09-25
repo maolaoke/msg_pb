@@ -67,6 +67,7 @@ type MonitorConf struct {
 	SubmitUsers    []User      `json:"submit_users"`
 	MonitorUserNum int         `json:"monitor_user_num"`
 	SubmitUserNum  int         `json:"submit_user_num"`
+	DoubleCheck    int         `json:"doubleCheck"`
 }
 
 type User struct {
